@@ -1,7 +1,7 @@
 @ECHO OFF
 TITLE sokratis12GR's Forge Tools - Setup v1.6
-call gradlew setupDecompWorkspace idea
+call gradlew setupDecompWorkspace
 ECHO ****************************
-ECHO Forge idea workspace setup complete!
+ECHO Forge workspace setup complete!
 ECHO ****************************
 PAUSE
