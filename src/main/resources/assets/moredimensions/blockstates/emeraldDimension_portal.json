@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "axis=z": { "model": "MoreDimensions:emeraldDimension_portal_ew" },
+        "axis=x": { "model": "MoreDimensions:emeraldDimension_portal_ns" }
+    }
+}

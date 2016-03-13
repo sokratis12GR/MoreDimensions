@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "axis=z": { "model": "MoreDimensions:coalDimension_portal_ew" },
+        "axis=x": { "model": "MoreDimensions:coalDimension_portal_ns" }
+    }
+}

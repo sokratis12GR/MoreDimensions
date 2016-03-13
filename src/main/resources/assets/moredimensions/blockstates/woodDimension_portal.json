@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "axis=z": { "model": "MoreDimensions:woodDimension_portal_ew" },
+        "axis=x": { "model": "MoreDimensions:woodDimension_portal_ns" }
+    }
+}

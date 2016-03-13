@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "axis=z": { "model": "MoreDimensions:glassDimension_portal_ew" },
+        "axis=x": { "model": "MoreDimensions:glassDimension_portal_ns" }
+    }
+}

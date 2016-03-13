@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "axis=z": { "model": "MoreDimensions:quartzDimension_portal_ew" },
+        "axis=x": { "model": "MoreDimensions:quartzDimension_portal_ns" }
+    }
+}

@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "axis=z": { "model": "MoreDimensions:redstoneDimension_portal_ew" },
+        "axis=x": { "model": "MoreDimensions:redstoneDimension_portal_ns" }
+    }
+}

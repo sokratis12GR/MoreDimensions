@@ -1,0 +1,28 @@
+#en_US.lang File
+
+#Config File
+config.dimensions=Dimensions Settings
+
+#CONFIG GUI
+gui.moredimensions.config.title=MoreDimensions Configuration
+
+#Igniters
+item.quartzDimension_trigger.name=Quartz Ignater
+item.lapisDimension_trigger.name=Lapis Igniter
+item.coalDimension_trigger.name=Coal Igniter
+item.glassDimension_trigger.name=Glass Igniter
+item.obsidianDimension_trigger.name=Obsidian Igniter
+item.snowDimension_trigger.name=Snow Igniter
+item.goldDimension_trigger.name=Gold Igniter
+item.woodDimension_trigger.name=Wood Igniter
+item.voidDimension_trigger.name=Void Igniter
+item.emeraldDimension_trigger.name=Emerald Ignater
+item.ironDimension_trigger.name=Iron Igniter
+item.redstoneDimension_trigger.name=Redstone Igniter
+item.diamondDimension_trigger.name=Diamond Igniter
+
+#CONSOLE LOG
+info.moredimensions.console.config.refresh=Refreshing configuration file.
+info.moredimensions.console.load.preInit=Begin Pre-initialization
+info.moredimensions.console.load.init=Begin Initialization
+info.moredimensions.console.load.postInit=Begin Post-initialization

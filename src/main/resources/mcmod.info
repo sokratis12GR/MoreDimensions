@@ -1,0 +1,16 @@
+[
+{
+  "modid": "moredimensions",
+  "name": "MoreDimensions",
+  "description": "This is a mod that adds more dimensions to minecraft",
+  "version": "1.5",
+  "mcversion": "1.8",
+  "url": "http://curse.com/project/237159",
+  "updateUrl": "http://curse.com/project/237159",
+  "authorList": ["sokratis12GR"],
+  "credits": "sokratis12GR creator and developer of this mod",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
