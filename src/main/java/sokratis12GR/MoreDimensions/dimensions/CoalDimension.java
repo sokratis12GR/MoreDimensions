@@ -1,57 +1,56 @@
 package sokratis12GR.MoreDimensions.dimensions;
 
-import net.minecraftforge.fml.common.event.*;
-import net.minecraftforge.fml.common.registry.*;
-import net.minecraftforge.fml.relauncher.*;
-import sokratis12GR.MoreDimensions.ConfigHandler;
-import sokratis12GR.MoreDimensions.biomes.CoalWorld;
-import net.minecraft.block.*;
-import net.minecraft.block.material.*;
-import net.minecraft.client.*;
-import net.minecraft.creativetab.*;
-import net.minecraft.entity.*;
-import net.minecraft.entity.player.*;
-import net.minecraft.item.*;
-import net.minecraft.util.*;
-import net.minecraft.world.*;
-import net.minecraft.world.biome.*;
-import net.minecraft.world.chunk.*;
-import net.minecraft.world.gen.*;
-import net.minecraft.world.gen.structure.*;
-import net.minecraftforge.common.*;
-import net.minecraftforge.event.terraingen.*;
-import net.minecraft.init.*;
-import java.util.*;
-
-import java.util.List;
-import java.util.Random;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockFalling;
-import net.minecraft.entity.EnumCreatureType;
-import net.minecraft.init.Blocks;
-import net.minecraft.util.IProgressUpdate;
-import net.minecraft.util.MathHelper;
-//import net.minecraft.world.ChunkPosition;
-import net.minecraft.world.SpawnerAnimals;
-import net.minecraft.world.World;
-import net.minecraft.world.WorldType;
-import net.minecraft.world.biome.BiomeGenBase;
-import net.minecraft.world.chunk.Chunk;
-import net.minecraft.world.chunk.IChunkProvider;
-import net.minecraft.world.gen.feature.WorldGenLakes;
-import net.minecraft.world.gen.structure.MapGenMineshaft;
-import net.minecraft.world.gen.structure.MapGenScatteredFeature;
-import net.minecraft.world.gen.structure.MapGenStronghold;
-import net.minecraft.world.gen.structure.MapGenVillage;
-
-import static net.minecraftforge.event.terraingen.InitMapGenEvent.EventType.*;
-import net.minecraftforge.fml.common.eventhandler.Event.*;
-import static net.minecraftforge.event.terraingen.PopulateChunkEvent.Populate.EventType.*;
-import net.minecraft.client.resources.model.*;
+import net.minecraft.block.BlockPortal;
+import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.state.BlockState;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.resources.model.ModelResourceLocation;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EnumCreatureType;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.EntityPlayerMP;
+import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.*;
+import net.minecraft.world.*;
+import net.minecraft.world.biome.BiomeGenBase;
+import net.minecraft.world.biome.WorldChunkManagerHell;
+import net.minecraft.world.chunk.Chunk;
+import net.minecraft.world.chunk.ChunkPrimer;
+import net.minecraft.world.chunk.IChunkProvider;
+import net.minecraft.world.gen.*;
+import net.minecraft.world.gen.feature.WorldGenLakes;
+import net.minecraft.world.gen.structure.*;
+import net.minecraftforge.common.DimensionManager;
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.terraingen.ChunkProviderEvent;
+import net.minecraftforge.event.terraingen.PopulateChunkEvent;
+import net.minecraftforge.event.terraingen.TerrainGen;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
+import net.minecraftforge.fml.common.eventhandler.Event.Result;
+import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
+import sokratis12GR.MoreDimensions.ConfigHandler;
+import sokratis12GR.MoreDimensions.biomes.CoalWorld;
+
+import java.util.Iterator;
+import java.util.List;
+import java.util.Random;
+
+import static net.minecraftforge.event.terraingen.InitMapGenEvent.EventType.*;
+import static net.minecraftforge.event.terraingen.PopulateChunkEvent.Populate.EventType.LAKE;
+import static net.minecraftforge.event.terraingen.PopulateChunkEvent.Populate.EventType.LAVA;
 
 public class CoalDimension
 {
@@ -332,8 +331,6 @@ public class CoalDimension
 					enumfacing = EnumFacing.WEST;
 				}
 
-				EnumFacing enumfacing1 = EnumFacing.getHorizontal(entityIn.getTeleportDirection());
-
 				if (enumfacing != null)
 				{
 					EnumFacing enumfacing2 = enumfacing.rotateYCCW();
@@ -377,30 +374,12 @@ public class CoalDimension
 					float f4 = 0.0F;
 					float f5 = 0.0F;
 
-					if (enumfacing == enumfacing1)
-					{
-						f2 = 1.0F;
-						f3 = 1.0F;
-					} else if (enumfacing == enumfacing1.getOpposite())
-					{
-						f2 = -1.0F;
-						f3 = -1.0F;
-					} else if (enumfacing == enumfacing1.rotateY())
-					{
-						f4 = 1.0F;
-						f5 = -1.0F;
-					} else
-					{
-						f4 = -1.0F;
-						f5 = 1.0F;
-					}
+
 
 					double d2 = entityIn.motionX;
 					double d3 = entityIn.motionZ;
 					entityIn.motionX = d2 * (double) f2 + d3 * (double) f5;
 					entityIn.motionZ = d2 * (double) f4 + d3 * (double) f3;
-					entityIn.rotationYaw = p_180620_2_ - (float) (enumfacing1.getHorizontalIndex() * 90)
-							+ (float) (enumfacing.getHorizontalIndex() * 90);
 				} else
 				{
 					entityIn.motionX = entityIn.motionY = entityIn.motionZ = 0.0D;
