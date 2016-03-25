@@ -401,33 +401,6 @@ public class CoalDimension
 
 		public boolean makePortal(Entity p_85188_1_)
 		{
-
-			byte b0 = 16;
-			double d0 = -1.0D;
-			int i = MathHelper.floor_double(p_85188_1_.posX);
-			int j = MathHelper.floor_double(p_85188_1_.posY);
-			int k = MathHelper.floor_double(p_85188_1_.posZ);
-			int l = i;
-			int i1 = j;
-			int j1 = k;
-			int k1 = 0;
-			int l1 = this.random.nextInt(4);
-			int i2;
-			double d1;
-			int k2;
-			double d2;
-			int i3;
-			int j3;
-			int k3;
-			int l3;
-			int i4;
-			int j4;
-			int k4;
-			int l4;
-			int i5;
-			double d3;
-			double d4;
-
 			for (i2 = i - b0; i2 <= i + b0; ++i2)
 			{
 				d1 = (double) i2 + 0.5D - p_85188_1_.posX;
